@@ -4,6 +4,7 @@ const products = [
   {
     id: "sea-cucumber",
     name: "大连海参",
+    slug: "haishen",
     archiveCode: "H-01",
     alias: "辽参、刺参",
     category: "海味",
@@ -22,6 +23,7 @@ const products = [
   {
     id: "abalone",
     name: "大连鲍鱼",
+    slug: "baoyu",
     archiveCode: "H-02",
     alias: "皱纹盘鲍",
     category: "海味",
@@ -40,6 +42,7 @@ const products = [
   {
     id: "clam",
     name: "丹东黄蚬子",
+    slug: "huangxianzi",
     archiveCode: "H-03",
     alias: "黄蚬、青柳蛤",
     category: "海味",
@@ -58,6 +61,7 @@ const products = [
   {
     id: "rice",
     name: "盘锦大米",
+    slug: "dami",
     archiveCode: "P-01",
     alias: "盘锦蟹田米",
     category: "稻香",
@@ -76,6 +80,7 @@ const products = [
   {
     id: "crab",
     name: "盘锦河蟹",
+    slug: "hexie",
     archiveCode: "P-02",
     alias: "中华绒螯蟹",
     category: "河鲜",
@@ -94,6 +99,7 @@ const products = [
   {
     id: "jade",
     name: "岫岩玉",
+    slug: "xiuyanyu",
     archiveCode: "M-01",
     alias: "岫玉",
     category: "玉石",
@@ -112,6 +118,7 @@ const products = [
   {
     id: "ginseng",
     name: "桓仁山参",
+    slug: "shanshen",
     archiveCode: "S-01",
     alias: "林下参、籽海",
     category: "山珍",
@@ -130,6 +137,7 @@ const products = [
   {
     id: "strawberry",
     name: "丹东草莓",
+    slug: "caomei",
     archiveCode: "P-03",
     alias: "东港草莓",
     category: "果香",
@@ -148,6 +156,7 @@ const products = [
   {
     id: "nanguo-pear",
     name: "鞍山南果梨",
+    slug: "nanguoli",
     archiveCode: "P-04",
     alias: "南果梨、鞍果",
     category: "水果",
@@ -167,6 +176,7 @@ const products = [
   {
     id: "beizhen-grape",
     name: "北镇葡萄",
+    slug: "putao",
     archiveCode: "P-05",
     alias: "北镇鲜食葡萄",
     category: "水果",
@@ -186,6 +196,7 @@ const products = [
   {
     id: "jellyfish",
     name: "营口海蜇",
+    slug: "haizhe",
     archiveCode: "H-04",
     alias: "海蜇、白皮子",
     category: "海洋水产",
@@ -205,6 +216,7 @@ const products = [
   {
     id: "jinzhou-apple",
     name: "锦州苹果",
+    slug: "pingguo",
     archiveCode: "P-06",
     alias: "辽西苹果",
     category: "水果",
@@ -224,6 +236,7 @@ const products = [
   {
     id: "fuxin-agate",
     name: "阜新玛瑙",
+    slug: "manao",
     archiveCode: "M-02",
     alias: "阜新水草玛瑙",
     category: "矿石工艺物产",
@@ -243,6 +256,7 @@ const products = [
   {
     id: "tieling-hazelnut",
     name: "铁岭榛子",
+    slug: "zhenzi",
     archiveCode: "S-02",
     alias: "平榛、东北榛子",
     category: "坚果山珍",
@@ -262,6 +276,7 @@ const products = [
   {
     id: "liaoyang-grape",
     name: "辽阳山葡萄",
+    slug: "shanputao",
     archiveCode: "P-07",
     alias: "野生山葡萄",
     category: "水果 / 酿造原料",
@@ -727,6 +742,22 @@ function closeArchive() {
   archiveModal.classList.remove("open");
   archiveModal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
+}
+
+function openArchiveFromUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const productSlug = params.get("product");
+  if (!productSlug) return;
+
+  const product = products.find((item) => item.slug === productSlug);
+  if (!product) return;
+
+  const exploreSection = document.querySelector("#explore");
+  if (exploreSection) {
+    exploreSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  window.setTimeout(() => openArchive(product.id), 350);
 }
 
 function updateModalButton() {
@@ -1547,3 +1578,4 @@ renderRoute();
 renderTimeline("rice");
 initAtlas();
 initRevealAnimation();
+openArchiveFromUrl();
