@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山海辽藏 - 究极商业体验版</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="weather-layer"></div>
+
+<div class="game-container glass-panel">
+    <div class="header">
+        <div class="brand">
+            <div class="logo-icon">⛰️</div>
+            <div class="brand-text">
+                <h1 style="margin:0; font-size: 1.8rem;">山海辽藏</h1>
+                <small id="ui-season-text" style="color:var(--gold);">🌸 春季 - 万物萌发</small>
+            </div>
+        </div>
+        
+        <div class="clicker-zone" onclick="Game.doActiveClick(event)">
+            <div class="clicker-btn">击鼓聚气</div>
+            <div class="combo-text" id="ui-combo">Combo x0</div>
+        </div>
+
+        <div class="stats-board">
+            <div class="stat-pill"><span class="icon">💰</span> <span id="ui-gold" class="num-font">1000</span></div>
+            <div class="stat-pill"><span class="icon">📜</span> <span id="ui-culture" class="num-font">0</span></div>
+        </div>
+    </div>
+
+    <div class="nav-bar">
+        <button class="nav-btn active" onclick="Game.switchTab('tab-manor')">🏡 庄园营造</button>
+        <button class="nav-btn" onclick="Game.switchTab('tab-kitchen')">🥘 关东食肆</button>
+        <button class="nav-btn" onclick="Game.switchTab('tab-gacha')">🌟 寻访贤才 (抽卡)</button>
+        <button class="nav-btn" onclick="Game.switchTab('tab-map')">🗺️ 版图探索</button>
+        <button class="nav-btn" onclick="Game.switchTab('tab-pokedex')">📖 藏品图鉴</button>
+    </div>
+
+    <div class="main-content">
+        
+        <div id="tab-manor" class="tab-panel active">
+            <div class="split-layout">
+                <div class="left-zone scrollable">
+                    <h2 class="section-title">🌾 基础物产田 (受季节加成)</h2>
+                    <div class="grid-layout" id="ui-farm-grid"></div>
+                </div>
+                <div class="right-zone">
+                    <div class="glass-card mb-15 flex-col h-half">
+                        <h2 class="section-title">🎒 仓储中心</h2>
+                        <ul class="inventory-list scrollable" id="ui-inventory"></ul>
+                    </div>
+                    <div class="glass-card flex-col h-half">
+                        <div class="flex-between">
+                            <h2 class="section-title">✈️ 订单中心</h2>
+                            <span style="font-size:0.8rem; color:var(--accent);">注意限时 VIP 订单</span>
+                        </div>
+                        <div class="order-list scrollable" id="ui-orders"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-kitchen" class="tab-panel">
+            <div class="glass-card h-full flex-col">
+                <h2 class="section-title">🥘 关东食肆 (深度加工)</h2>
+                <p class="section-desc">将基础物产在此组合烹饪，成品能卖出极高的价格。升级文化馆可提升基础利润。</p>
+                <div class="grid-layout scrollable" id="ui-kitchen-grid"></div>
+            </div>
+        </div>
+
+        <div id="tab-gacha" class="tab-panel">
+            <div class="split-layout">
+                <div class="left-zone glass-card" style="align-items: center; justify-content: center;">
+                    <div style="text-align: center;">
+                        <h2 style="font-size: 2rem; color: var(--wood-dark);">寻访辽宁文化大使</h2>
+                        <p style="color: #666; margin-bottom: 30px;">消耗 <b>300 文化值</b> 进行一次寻访，有概率结识 SSR 级传承人，获得永久神级 Buff 加成！</p>
+                        <div class="gacha-machine">
+                            <button class="btn-gacha" onclick="Game.rollGacha(event)">💎 立即寻访 (消耗 300 📜)</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-zone glass-card flex-col">
+                    <h2 class="section-title">🧑‍🤝‍🧑 已结识的贤才 (加成生效中)</h2>
+                    <div class="scrollable staff-list" id="ui-staff-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="tab-map" class="tab-panel">
+            <div class="glass-card h-full flex-col">
+                <h2 class="section-title">🗺️ 辽宁全图景与非遗探索</h2>
+                <div class="grid-layout map-grid scrollable" id="ui-map-grid"></div>
+            </div>
+        </div>
+
+        <div id="tab-pokedex" class="tab-panel">
+            <div class="glass-card h-full flex-col">
+                <div class="flex-between">
+                    <h2 class="section-title">📖 山海图鉴馆</h2>
+                    <span class="tag">挂机收益来源</span>
+                </div>
+                <h3 class="mt-10" style="color:var(--theme-dark);">🎭 已收录非遗 (自动产出金币)</h3>
+                <div class="badge-wall mb-15" id="ui-heritage-wall"></div>
+                
+                <h3 style="color:var(--theme-dark);">🏅 城市探索徽章</h3>
+                <div class="badge-wall mb-15" id="ui-badge-wall"></div>
+
+                <h3 style="color:var(--theme-dark);">📦 解锁物产档案 (<span id="ui-dex-progress">0%</span>)</h3>
+                <div class="grid-layout dex-grid scrollable" id="ui-pokedex-grid"></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal-overlay" id="ui-gacha-result">
+    <div class="gacha-showcase">
+        <h2 id="gacha-rarity">SSR</h2>
+        <div class="gacha-icon" id="gacha-icon">👨‍🍳</div>
+        <h3 id="gacha-name">顶级辽菜大厨</h3>
+        <p id="gacha-desc">烹饪速度提升 50%</p>
+        <button class="btn-primary" style="margin-top:20px;" onclick="document.getElementById('ui-gacha-result').classList.remove('show')">开心收下</button>
+    </div>
+</div>
+
+<div id="float-layer"></div>
+
+<script src="game.js"></script>
+</body>
+</html>

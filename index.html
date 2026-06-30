@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="山海辽藏：辽宁物产数字档案库，以辽宁特色物产为核心的数字档案互动平台">
+  <title>山海辽藏：辽宁物产数字档案库</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" aria-label="返回首页">
+      <img src="logo1.png" alt="山海辽藏 辽宁物产档案跨媒体设计">
+      <span>
+        <strong>山海辽藏</strong>
+        <small>LIAONING ARCHIVE</small>
+      </span> 
+    </a>
+    <button class="menu-toggle" type="button" aria-label="打开导航" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+    <nav class="site-nav" aria-label="主导航">
+      <a class="active" href="#home">首页</a>
+      <a href="#explore">物产探索</a>
+      <a href="#growth">成长链</a>
+      <a href="#game">风物游戏</a>
+      <a href="#route">路线生成 <span class="nav-count" id="navCount">0</span></a>
+      <a href="#about">关于我们</a>
+      <a class="nav-orbit-button" href="#atlas" aria-label="打开产区图谱"><span aria-hidden="true">▤</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <!-- Hero 四张独立斜切背景图，可在 images 目录替换对应文件 -->
+      <div class="hero-slice-bg" aria-hidden="true">
+        <div class="hero-slice slice-sea"></div>
+        <div class="hero-slice slice-plain"></div>
+        <div class="hero-slice slice-forest"></div>
+        <div class="hero-slice slice-mineral"></div>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-slice-labels" aria-hidden="true">
+        <div class="slice-label"><span class="slice-title">海岸之域</span><span class="slice-subtitle">SEA &amp; COAST</span></div>
+        <div class="slice-label"><span class="slice-title">沃野平原</span><span class="slice-subtitle">PLAINS &amp; WETLAND</span></div>
+        <div class="slice-label"><span class="slice-title">林木之森</span><span class="slice-subtitle">FOREST &amp; ECOLOGY</span></div>
+        <div class="slice-label"><span class="slice-title">矿产资源</span><span class="slice-subtitle">MINERAL RESOURCES</span></div>
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span>数字档案 · 001</span><span>辽宁 / 中国</span></p>
+          <div class="hero-title-wrap">
+            <h1><span>山海</span><span class="outline-text">辽藏</span></h1>
+            <img class="hero-seal" src="images/hero-liao-seal.png" alt="" aria-hidden="true">
+          </div>
+          <p class="hero-subtitle">辽宁物产档案跨媒体设计</p>
+          <span class="hero-title-rule" aria-hidden="true"></span>
+          <p class="hero-intro">以辽宁物产为对象，建立从档案信息到互动体验的数字传播系统。沿山海线索，阅读风物如何被自然、生产与时间共同塑造。</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#explore"><span class="hero-action-icon" aria-hidden="true">⌕</span>进入物产探索 <span>›</span></a>
+            <a class="btn btn-text" href="#growth"><span class="hero-action-icon" aria-hidden="true">◇</span>查看成长链</a>
+            <a class="btn btn-text" href="#route"><span class="hero-action-icon" aria-hidden="true">△</span>生成我的路线</a>
+          </div>
+        </div>
+
+        <div class="hero-index reveal">
+          <span>ARCHIVE SYSTEM</span>
+          <strong>15</strong>
+          <small>已收录物产档案</small>
+        </div>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>向下探索</span><i></i>
+      </div>
+    </section>
+
+    <section class="section explore-section" id="explore">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-no">01 / 物产探索</p>
+          <h2>循线索，<br>检索辽宁风物</h2>
+        </div>
+        <p class="section-lead">这里没有货架式分类。请选择一条自然、风物或生长线索，让档案之间的隐秘关联浮现。</p>
+      </div>
+
+      <div class="clue-panel reveal">
+        <div class="clue-row">
+          <span class="clue-title">山海线索</span>
+          <div class="filter-list" data-group="landscape">
+            <button class="filter-chip active" type="button" data-filter="all">全部档案</button>
+            <button class="filter-chip" type="button" data-filter="黄渤海域">黄渤海域</button>
+            <button class="filter-chip" type="button" data-filter="辽河湿地">辽河湿地</button>
+            <button class="filter-chip" type="button" data-filter="辽东山地">辽东山地</button>
+            <button class="filter-chip" type="button" data-filter="平原稻田">平原稻田</button>
+            <button class="filter-chip" type="button" data-filter="矿脉地层">矿脉地层</button>
+          </div>
+        </div>
+        <div class="clue-row">
+          <span class="clue-title">风物线索</span>
+          <div class="filter-list" data-group="type">
+            <button class="filter-chip" type="button" data-filter="海味">海味</button>
+            <button class="filter-chip" type="button" data-filter="稻香">稻香</button>
+            <button class="filter-chip" type="button" data-filter="河鲜">河鲜</button>
+            <button class="filter-chip" type="button" data-filter="山珍">山珍</button>
+            <button class="filter-chip" type="button" data-filter="玉石">玉石</button>
+            <button class="filter-chip" type="button" data-filter="果香">果香</button>
+            <button class="filter-chip" type="button" data-filter="工艺物产">工艺物产</button>
+          </div>
+        </div>
+        <div class="clue-row">
+          <span class="clue-title">生长线索</span>
+          <div class="filter-list" data-group="growth">
+            <button class="filter-chip" type="button" data-filter="冷水慢养">冷水慢养</button>
+            <button class="filter-chip" type="button" data-filter="稻田共生">稻田共生</button>
+            <button class="filter-chip" type="button" data-filter="江海交汇">江海交汇</button>
+            <button class="filter-chip" type="button" data-filter="林下生长">林下生长</button>
+            <button class="filter-chip" type="button" data-filter="地层沉积">地层沉积</button>
+            <button class="filter-chip" type="button" data-filter="果园栽培">果园栽培</button>
+            <button class="filter-chip" type="button" data-filter="山地孕育">山地孕育</button>
+            <button class="filter-chip" type="button" data-filter="海洋牧场">海洋牧场</button>
+          </div>
+        </div>
+        <div class="clue-row">
+          <span class="clue-title">城地线索</span>
+          <div class="filter-list" data-group="place">
+            <button class="filter-chip" type="button" data-filter="鞍山">鞍山</button>
+            <button class="filter-chip" type="button" data-filter="锦州">锦州</button>
+            <button class="filter-chip" type="button" data-filter="营口">营口</button>
+            <button class="filter-chip" type="button" data-filter="阜新">阜新</button>
+            <button class="filter-chip" type="button" data-filter="铁岭">铁岭</button>
+            <button class="filter-chip" type="button" data-filter="辽阳">辽阳</button>
+          </div>
+        </div>
+        <div class="filter-status">
+          <span id="filterText">正在阅览：全部档案</span>
+          <button id="clearFilter" type="button">重置线索</button>
+        </div>
+      </div>
+
+      <div class="product-grid" id="productGrid" aria-live="polite"></div>
+      <p class="empty-state" id="emptyState" hidden>这条线索暂未收录物产档案，请尝试其他检索方向。</p>
+    </section>
+
+    <section class="section growth-section" id="growth">
+      <div class="section-heading light reveal">
+        <div>
+          <p class="section-no">02 / 成长链叙事</p>
+          <h2>从自然，<br>到一方物产</h2>
+        </div>
+        <p class="section-lead">一件物产并非孤立生成。它穿过地貌、气候、劳作与技艺，最终成为一地可被感知的文化记忆。</p>
+      </div>
+
+      <div class="growth-layout">
+        <div class="growth-sticky reveal">
+          <p>选择档案链</p>
+          <div class="chain-tabs" role="tablist" aria-label="选择成长链">
+            <button class="chain-tab active" type="button" data-chain="rice" role="tab">盘锦大米 <span>01</span></button>
+            <button class="chain-tab" type="button" data-chain="seaCucumber" role="tab">大连海参 <span>02</span></button>
+            <button class="chain-tab" type="button" data-chain="jade" role="tab">岫岩玉 <span>03</span></button>
+            <button class="chain-tab" type="button" data-chain="crab" role="tab">盘锦河蟹 <span>04</span></button>
+            <button class="chain-tab" type="button" data-chain="clam" role="tab">丹东黄蚬子 <span>05</span></button>
+            <button class="chain-tab" type="button" data-chain="strawberry" role="tab">丹东草莓 <span>06</span></button>
+            <button class="chain-tab" type="button" data-chain="ginseng" role="tab">桓仁山参 <span>07</span></button>
+            <button class="chain-tab" type="button" data-chain="nanguoPear" role="tab">鞍山南果梨 <span>08</span></button>
+            <button class="chain-tab" type="button" data-chain="jellyfish" role="tab">营口海蜇 <span>09</span></button>
+            <button class="chain-tab" type="button" data-chain="agate" role="tab">阜新玛瑙 <span>10</span></button>
+          </div>
+          <div class="chain-summary">
+            <span id="chainRegion">辽河湿地 / 盘锦</span>
+            <strong id="chainTitle">稻香从湿地升起</strong>
+            <p id="chainIntro">河海退积形成的平原与充足水系，为一粒稻米建立了独特的生命坐标。</p>
+          </div>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+
+    <section class="section atlas-section" id="atlas">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-no">03 / 产区图谱</p>
+          <h2>物产不是点，<br>而是地域关系</h2>
+        </div>
+        <p class="section-lead">点击图谱中的地域节点，查看自然区域与代表物产之间的关联网络。</p>
+      </div>
+
+      <div class="atlas-explorer reveal">
+        <div class="atlas-index-line">
+          <span>LN-PRODUCT-ATLAS / 09 ORIGIN POINTS</span>
+          <small id="atlasRelationStatus">全域总览 · 关系线待开启</small>
+        </div>
+
+        <aside class="atlas-control-rail" aria-label="产区图谱控制器">
+          <div class="atlas-control-group">
+            <p>01 / 五大产区线索</p>
+            <div class="atlas-zone-tabs" role="tablist" aria-label="选择产区线索">
+              <button class="active" type="button" data-atlas-zone="all">全域总览</button>
+              <button type="button" data-atlas-zone="coast">黄渤海域</button>
+              <button type="button" data-atlas-zone="wetland">辽河湿地</button>
+              <button type="button" data-atlas-zone="mountain">辽东山地</button>
+              <button type="button" data-atlas-zone="mineral">矿脉地层</button>
+              <button type="button" data-atlas-zone="orchard">果园丘陵</button>
+            </div>
+          </div>
+
+          <div class="atlas-zone-summary" aria-live="polite">
+            <p id="atlasZoneEn">LIAONING PRODUCT NETWORK</p>
+            <h3 id="atlasZoneTitle">辽宁全域物产网络</h3>
+            <span id="atlasZoneDesc">从海岸、湿地到山地与矿层，九个产区节点共同构成辽宁物产的地域关系。</span>
+            <small id="atlasZoneProducts">山海 · 湿地 · 山林 · 矿脉 · 果园</small>
+          </div>
+
+          <div class="atlas-control-group relation-control-group">
+            <p>02 / 关系模式</p>
+            <div class="atlas-mode-tabs" role="tablist" aria-label="选择关系模式">
+              <button class="active" type="button" data-atlas-mode="environment">按自然环境</button>
+              <button type="button" data-atlas-mode="category">按物产类别</button>
+              <button type="button" data-atlas-mode="growth">按成长链</button>
+              <button type="button" data-atlas-mode="route">按我的收藏路线 <b id="atlasSavedCount">0</b></button>
+            </div>
+            <button class="atlas-line-toggle" id="atlasLineToggle" type="button" aria-pressed="false">
+              <span></span>查看关系线
+            </button>
+          </div>
+        </aside>
+
+        <div class="map-stage atlas-map-stage">
+          <div class="atlas-zone-layer" aria-hidden="true">
+            <span class="atlas-zone-shape zone-coast" data-zone-shape="coast"></span>
+            <span class="atlas-zone-shape zone-wetland" data-zone-shape="wetland"></span>
+            <span class="atlas-zone-shape zone-mountain" data-zone-shape="mountain"></span>
+            <span class="atlas-zone-shape zone-mineral" data-zone-shape="mineral"></span>
+            <span class="atlas-zone-shape zone-orchard" data-zone-shape="orchard"></span>
+          </div>
+          <!-- 产区图谱辽宁地图，可后期替换 images/liaoning-map.svg -->
+          <img class="liaoning-map" src="images/liaoning-map.svg" alt="辽宁省地图轮廓">
+          <svg class="map-network" id="mapNetwork" viewBox="0 0 100 100" aria-hidden="true">
+            <defs>
+              <filter id="atlasLineGlow"><feGaussianBlur stdDeviation="0.45" result="blur"></feGaussianBlur><feMerge><feMergeNode in="blur"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>
+            </defs>
+            <g id="mapRelations"></g>
+          </svg>
+
+          <button class="map-node" type="button" data-region="dalian" data-zones="coast" data-products="黄渤海域｜大连海参 · 大连鲍鱼" style="--x:56%; --y:78%;">
+            <i></i><span>大连</span>
+          </button>
+          <button class="map-node" type="button" data-region="dandong" data-zones="coast orchard" data-products="黄渤海域 / 果园丘陵｜丹东黄蚬子 · 丹东草莓" style="--x:80%; --y:59%;">
+            <i></i><span>丹东</span>
+          </button>
+          <button class="map-node" type="button" data-region="panjin" data-zones="wetland" data-products="辽河湿地｜盘锦大米 · 盘锦河蟹" style="--x:49%; --y:55%;">
+            <i></i><span>盘锦</span>
+          </button>
+          <button class="map-node" type="button" data-region="benxi" data-zones="mountain" data-products="辽东山地｜桓仁山参" style="--x:73%; --y:46%;">
+            <i></i><span>本溪</span>
+          </button>
+          <button class="map-node" type="button" data-region="anshan" data-zones="orchard mineral" data-products="果园丘陵 / 矿脉地层｜鞍山南果梨 · 岫岩玉" style="--x:62%; --y:51%;">
+            <i></i><span>鞍山 / 岫岩</span>
+          </button>
+          <button class="map-node" type="button" data-region="yingkou" data-zones="coast" data-products="黄渤海域｜营口海蜇" style="--x:56%; --y:64%;">
+            <i></i><span>营口</span>
+          </button>
+          <button class="map-node" type="button" data-region="jinzhou" data-zones="orchard" data-products="果园丘陵｜北镇葡萄 · 锦州苹果" style="--x:39%; --y:47%;">
+            <i></i><span>锦州</span>
+          </button>
+          <button class="map-node" type="button" data-region="fuxin" data-zones="mineral" data-products="矿脉地层｜阜新玛瑙" style="--x:43%; --y:29%;">
+            <i></i><span>阜新</span>
+          </button>
+          <button class="map-node" type="button" data-region="tieling" data-zones="mountain" data-products="辽东山地｜铁岭榛子" style="--x:70%; --y:24%;">
+            <i></i><span>铁岭</span>
+          </button>
+          <p class="map-caption">LIAONING PRODUCT ORIGIN ARCHIVE / 经纬参考 38°—43°N</p>
+        </div>
+
+        <aside class="atlas-detail-panel" id="atlasDetailPanel" aria-hidden="true" aria-live="polite">
+          <button class="atlas-panel-close" id="atlasPanelClose" type="button" aria-label="关闭产区档案">×</button>
+          <div class="atlas-focus-head"><span id="atlasNumber">A-01</span><small>城市产区档案 / ORIGIN FILE</small></div>
+          <p class="atlas-en" id="atlasEn">DALIAN COASTAL PRODUCTS</p>
+          <h3 id="atlasTitle">大连海岸产区</h3>
+          <dl class="atlas-detail-list">
+            <div><dt>所属产区</dt><dd id="atlasZoneValue">黄渤海域</dd></div>
+            <div><dt>形成条件</dt><dd id="atlasConditions">北方冷水海域、礁石海底与海洋牧场共同构成海味生长环境。</dd></div>
+            <div><dt>地域价值</dt><dd id="atlasValue">连接海岸生态、海洋生产与大连港城饮食文化。</dd></div>
+          </dl>
+          <div class="atlas-products" id="atlasProducts"></div>
+          <div class="atlas-panel-actions">
+            <button class="btn atlas-view-product" id="atlasViewProduct" type="button">查看档案 <span>↗</span></button>
+            <button class="btn atlas-add-route" id="atlasAddRoute" type="button">加入我的路线 <span>＋</span></button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section game-section" id="game">
+      <div class="section-heading game-heading reveal">
+        <div>
+          <p class="section-no">05 / 风物互动游戏</p>
+          <h2>在游戏中，<br>识别辽宁风物</h2>
+        </div>
+        <p class="section-lead">通过物产识别、产区匹配和路线挑战，将辽宁物产档案从静态浏览转化为可参与的互动体验。</p>
+      </div>
+
+      <div class="game-intro-bar reveal">
+        <div>
+          <span>PRODUCT GAME</span>
+          <strong>辽宁物产挑战</strong>
+        </div>
+        <div class="game-tags" aria-label="游戏玩法标签">
+          <span>物产识别</span>
+          <span>产区匹配</span>
+          <span>山海线索</span>
+          <span>路线挑战</span>
+        </div>
+      </div>
+
+      <div class="game-frame-shell reveal">
+        <iframe id="gameFrame" src="game/index.html" title="辽宁物产互动游戏" loading="lazy"></iframe>
+      </div>
+
+      <div class="game-actions reveal">
+        <a href="#route" class="btn btn-primary">生成我的辽宁物产路线 <span>↗</span></a>
+        <a id="gameFullscreenLink" href="game/index.html" target="_blank" rel="noopener" class="btn btn-text">打开全屏游戏 <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="section route-section" id="route">
+      <div class="route-page-decoration" aria-hidden="true">
+        <span class="route-orbit route-orbit-a"></span>
+        <span class="route-orbit route-orbit-b"></span>
+      </div>
+      <div class="route-top reveal">
+        <p class="section-no">06 / 我的辽宁物产路线</p>
+        <h2>把读过的风物，<br>连成你的辽宁</h2>
+        <p>收藏感兴趣的物产，系统将依据它们所在的山海坐标，生成一条属于你的认知路径。</p>
+      </div>
+
+      <div class="route-workbench reveal">
+        <div class="collection-panel">
+          <p class="panel-kicker">CHECK-IN NODES / 打卡节点</p>
+          <div class="panel-title">
+            <span>我的收藏物产</span>
+            <strong><b id="collectionCount">0</b> / 15</strong>
+          </div>
+          <div class="collection-list" id="collectionList">
+            <div class="collection-empty">
+              <span>＋</span>
+              <p>尚未收藏物产<br><small>前往档案卡片，加入你的路线</small></p>
+            </div>
+          </div>
+          <a class="text-link route-explore-link" href="#explore">继续探索物产 <span>↗</span></a>
+        </div>
+
+        <div class="route-result">
+          <div class="route-result-map" aria-hidden="true">
+            <img src="images/liaoning-map.svg" alt="">
+            <span class="route-map-pin pin-a"></span>
+            <span class="route-map-pin pin-b"></span>
+          </div>
+          <svg class="route-curve" viewBox="0 0 600 560" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-20 430 C100 520 162 314 278 382 S420 340 628 122"></path>
+            <circle cx="118" cy="432" r="7"></circle>
+            <circle cx="302" cy="382" r="7"></circle>
+            <circle cx="508" cy="224" r="7"></circle>
+          </svg>
+          <div class="route-result-content">
+            <div class="route-stamp">自动生成 / AUTO</div>
+            <p class="route-label">LIAONING CHECK-IN ROUTE / 你的路线名称</p>
+            <h3 id="routeName">等待一条线索</h3>
+            <p class="route-description" id="routeDescription">至少收藏一件物产，我们将从它的自然环境出发，为你书写一条辽宁物产认知路径。</p>
+            <div class="route-places" id="routePlaces">
+              <span>起点待定</span><b>→</b><span>路径生成中</span>
+            </div>
+            <button class="btn btn-dark" id="posterButton" type="button">预览分享海报 <span>↗</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="about">
+    <div>
+      <strong>山海辽藏</strong>
+      <span>辽宁物产档案跨媒体设计</span>
+    </div>
+    <p>从山海自然到地域文化，让物产成为认识辽宁的另一种方法。</p>
+    <a href="#top">回到顶部 ↑</a>
+  </footer>
+
+  <div class="modal" id="archiveModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-panel">
+      <button class="modal-close" type="button" aria-label="关闭档案" data-close-modal>×</button>
+      <div class="modal-visual" id="modalVisual">
+        <!-- 物产详情图片占位：后期可替换为对应物产摄影图 -->
+        <span class="modal-file-no" id="modalFileNo">FILE 001</span>
+        <!--<div class="visual-symbol" id="modalSymbol">参</div>
+          <p>IMAGE PLACEHOLDER</p>-->
+          
+  <img class="modal-img" id="modalImage" src="" alt="" />
+
+  <div class="visual-symbol" id="modalSymbol">参</div>
+  <p class="modal-placeholder" id="modalPlaceholder">IMAGE PLACEHOLDER</p>
+        
+      </div>
+      <div class="modal-content">
+        <p class="modal-kicker" id="modalKicker">海味档案 / 黄渤海域</p>
+        <h2 id="modalTitle">大连海参</h2>
+        <p class="modal-feature" id="modalFeature"></p>
+        <dl class="archive-list" id="archiveList"></dl>
+        <button class="btn btn-primary modal-add" id="modalAdd" type="button">加入我的路线 <span>＋</span></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="poster-modal" id="posterModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="posterGuideTitle">
+    <div class="modal-backdrop" data-close-poster></div>
+    <div class="poster-dialog">
+      <button class="modal-close poster-close" type="button" aria-label="关闭海报" data-close-poster>×</button>
+      <div class="poster" id="poster">
+        <div class="poster-texture" aria-hidden="true"></div>
+        <header class="poster-header">
+          <div class="poster-issue"><span>ROUTE ARCHIVE</span><b>LN / PERSONAL</b></div>
+          <p>山海辽藏 · 辽宁物产档案</p>
+          <h2 id="posterGuideTitle">辽宁物产打卡指南</h2>
+          <p class="poster-subtitle">循着山海线索，收藏属于你的辽宁风物路线</p>
+          <div class="poster-route-note">
+            <strong id="posterTitle">等待一条线索</strong>
+            <span id="posterDescription">请先收藏物产，生成你的辽宁路线。</span>
+          </div>
+        </header>
+
+        <div class="poster-route-area" id="posterRouteArea">
+          <svg class="poster-route-line" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <marker id="posterRouteArrow" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+                <path d="M0,0 L6,3.5 L0,7 Z"></path>
+              </marker>
+            </defs>
+            <path class="route-segment route-segment-1" d="M20 16 C45 2 52 38 78 31" marker-end="url(#posterRouteArrow)"></path>
+            <path class="route-segment route-segment-2" d="M78 31 C94 53 49 50 26 62" marker-end="url(#posterRouteArrow)"></path>
+            <path class="route-segment route-segment-3" d="M26 62 C42 92 63 72 80 84" marker-end="url(#posterRouteArrow)"></path>
+          </svg>
+          <div class="poster-stickers" id="posterItems"></div>
+          <p class="poster-extra-count" id="posterExtraCount" hidden></p>
+          <div class="poster-empty" id="posterEmpty">
+            <span>＋</span>
+            <p>请先收藏物产<br><small>生成你的辽宁路线</small></p>
+          </div>
+        </div>
+
+        <footer class="poster-footer">
+          <div><strong>山海辽藏</strong><span>LIAONING PRODUCT ARCHIVE</span></div>
+        </footer>
+      </div>
+      <div class="poster-actions">
+        <button class="btn poster-save" id="savePosterButton" type="button">保存路线海报</button>
+      </div>
+      <p class="poster-tip">海报预览区域 · 保存时只导出海报主体</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
