@@ -254,10 +254,62 @@ const products = [
     regionKey: "mineral"
   },
   {
+    id: "fushun-amber",
+    name: "抚顺琥珀",
+    englishName: "FUSHUN AMBER",
+    slug: "fushun-amber",
+    archiveCode: "M-03",
+    categoryEn: "MINERAL CRAFT",
+    alias: "煤层琥珀、辽宁琥珀",
+    category: "矿产工艺",
+    type: "有机宝石工艺（琥珀）",
+    origin: "辽宁省抚顺市",
+    coreArea: "北纬 41°，煤田地层区（抚顺一带）",
+    landscape: ["矿脉地层"],
+    growth: ["地层记忆", "地层沉积"],
+    tags: ["矿产工艺", "工艺物产", "地层记忆", "琥珀工艺", "抚顺", "抚顺特产", "温润通透"],
+    feature: "色泽温润通透，质感轻盈，光泽柔和。",
+    environment: "古植物树脂埋藏于煤田地层，在煤层沉积条件中长期演化形成。",
+    form: "色泽温润通透，常呈蜜黄、棕黄或红褐色，质感轻盈，抛光后光泽柔和。",
+    value: "辽宁代表性有机宝石工艺物产，兼具观赏、工艺与科研价值。",
+    note: "抚顺琥珀多用于首饰、雕件与收藏展示，其形成机制与材质特征兼具美学与地质研究价值。",
+    keywords: ["琥珀工艺", "抚顺特产", "温润通透", "地层记忆"],
+    symbol: "珀",
+    image: "images/products/fushun-amber.jpg",
+    color: "#b87a43",
+    regionKey: "mineral"
+  },
+  {
+    id: "black-fungus",
+    name: "黑木耳",
+    englishName: "BLACK FUNGUS",
+    slug: "black-fungus",
+    archiveCode: "S-02",
+    categoryEn: "FOREST PRODUCTS",
+    alias: "木耳、云耳",
+    category: "山林物产",
+    type: "食用菌（木耳科）",
+    origin: "辽宁省抚顺市清原满族自治县",
+    coreArea: "北纬 42°，山林菌产区（清原县一带）",
+    landscape: ["辽东山地"],
+    growth: ["林下生态", "林下生长"],
+    tags: ["山林物产", "食用菌", "山林菌香", "清原特产", "黑润脆嫩", "林下生态", "抚顺"],
+    feature: "耳片厚实，色泽乌润，口感脆嫩。",
+    environment: "山地林区、湿润气候与食用菌栽培环境共同形成适宜生长条件。",
+    form: "耳片厚实舒展，色泽乌润，质地柔韧，泡发后口感脆嫩。",
+    value: "辽宁代表性山林菌类物产，具有生态农业特征。",
+    note: "黑木耳喜湿喜阴，常依附原木或菌棒生长，兼具食用价值与地方特色，是辽宁山林经济中的重要菌类物产。",
+    keywords: ["山林菌香", "清原特产", "黑润脆嫩", "林下生态"],
+    symbol: "菌",
+    image: "images/products/black-fungus.jpg",
+    color: "#4f5b43",
+    regionKey: "mountain"
+  },
+  {
     id: "tieling-hazelnut",
     name: "铁岭榛子",
     slug: "zhenzi",
-    archiveCode: "S-02",
+    archiveCode: "S-03",
     alias: "平榛、东北榛子",
     category: "坚果山珍",
     origin: "铁岭山地及丘陵地区",
@@ -527,8 +579,19 @@ const atlasRegions = {
     conditions: "火山岩孔洞与地下热液长期作用，形成纹带丰富的玛瑙矿物。",
     value: "推动矿物资源向雕刻工艺、城市文化与文创产品转化。"
   },
-  tieling: {
+  fushun: {
     number: "A-09",
+    city: "抚顺 / 清原",
+    en: "FUSHUN STRATA & FOREST PRODUCTS",
+    title: "抚顺地层山林产区",
+    zones: ["mineral", "mountain"],
+    products: ["抚顺琥珀", "黑木耳"],
+    productIds: ["fushun-amber", "black-fungus"],
+    conditions: "抚顺煤田地层记录古植物树脂埋藏过程，清原山林湿润环境则孕育菌类栽培资源。",
+    value: "连接辽宁地层记忆、琥珀工艺、山林菌类与生态农业价值。"
+  },
+  tieling: {
+    number: "A-10",
     city: "铁岭",
     en: "NORTHERN HILLS & HAZEL GROVES",
     title: "铁岭辽北山珍产区",
@@ -544,8 +607,8 @@ const atlasZones = {
   all: {
     title: "辽宁全域物产网络",
     en: "LIAONING PRODUCT NETWORK",
-    desc: "从海岸、湿地到山地与矿层，九个产区节点共同构成辽宁物产的地域关系。",
-    products: "山海 · 湿地 · 山林 · 矿脉 · 果园"
+    desc: "从海岸、湿地到山地与矿层，十个产区节点共同构成辽宁物产的地域关系。",
+    products: "山海 · 湿地 · 山林 · 矿脉 · 果园 · 菌香"
   },
   coast: {
     title: "黄渤海域",
@@ -562,14 +625,14 @@ const atlasZones = {
   mountain: {
     title: "辽东山地",
     en: "EASTERN LIAONING MOUNTAINS",
-    desc: "辽东山地的森林、林缘与凉润气候孕育山参和坚果山珍。",
-    products: "桓仁山参 · 铁岭榛子"
+    desc: "辽东山地的森林、林缘与凉润气候孕育山参、食用菌和坚果山珍。",
+    products: "桓仁山参 · 黑木耳 · 铁岭榛子"
   },
   mineral: {
     title: "矿脉地层",
     en: "MINERAL STRATA",
-    desc: "辽宁多样的古老地层与矿物资源形成玉石、玛瑙等工艺物产。",
-    products: "岫岩玉 · 阜新玛瑙"
+    desc: "辽宁多样的古老地层与矿物资源形成玉石、玛瑙、琥珀等工艺物产。",
+    products: "岫岩玉 · 阜新玛瑙 · 抚顺琥珀"
   },
   orchard: {
     title: "果园丘陵",
@@ -582,26 +645,30 @@ const atlasZones = {
 const atlasCoordinates = {
   dalian: [56, 78], dandong: [80, 59], panjin: [49, 55],
   benxi: [73, 46], anshan: [62, 51], yingkou: [56, 64],
-  jinzhou: [39, 47], fuxin: [43, 29], tieling: [70, 24]
+  jinzhou: [39, 47], fuxin: [43, 29], fushun: [67, 36], tieling: [70, 24]
 };
 
 const atlasRelationSets = {
   environment: [
     ["dalian", "yingkou", ["coast"]], ["yingkou", "dandong", ["coast"]],
     ["panjin", "yingkou", ["wetland"]], ["tieling", "benxi", ["mountain"]],
-    ["benxi", "dandong", ["mountain"]], ["fuxin", "anshan", ["mineral"]],
+    ["tieling", "fushun", ["mountain"]], ["fushun", "benxi", ["mountain"]],
+    ["benxi", "dandong", ["mountain"]], ["fuxin", "fushun", ["mineral"]],
+    ["fushun", "anshan", ["mineral"]],
     ["jinzhou", "anshan", ["orchard"]], ["anshan", "dandong", ["orchard"]]
   ],
   category: [
     ["dalian", "dandong", ["coast"]], ["dalian", "yingkou", ["coast"]],
     ["dandong", "jinzhou", ["orchard"]], ["jinzhou", "anshan", ["orchard"]],
-    ["benxi", "tieling", ["mountain"]], ["fuxin", "anshan", ["mineral"]]
+    ["benxi", "fushun", ["mountain"]], ["fushun", "tieling", ["mountain"]],
+    ["fuxin", "fushun", ["mineral"]], ["fushun", "anshan", ["mineral"]]
   ],
   growth: [
     ["panjin", "yingkou", ["wetland"]], ["yingkou", "dalian", ["coast"]],
     ["dalian", "dandong", ["coast"]], ["tieling", "benxi", ["mountain"]],
+    ["tieling", "fushun", ["mountain"]], ["fushun", "benxi", ["mountain", "mineral"]],
     ["benxi", "dandong", ["mountain", "orchard"]], ["jinzhou", "anshan", ["orchard"]],
-    ["fuxin", "anshan", ["mineral"]]
+    ["fuxin", "fushun", ["mineral"]], ["fushun", "anshan", ["mineral"]]
   ]
 };
 
@@ -622,6 +689,15 @@ const archiveModal = document.querySelector("#archiveModal");
 const posterModal = document.querySelector("#posterModal");
 const savePosterButton = document.querySelector("#savePosterButton");
 const toast = document.querySelector("#toast");
+
+function renderArchiveTotals() {
+  document.querySelectorAll("[data-product-total]").forEach((element) => {
+    element.textContent = products.length;
+  });
+
+  const archiveTotal = document.querySelector("#archiveTotal");
+  if (archiveTotal) archiveTotal.textContent = products.length;
+}
 
 function renderProducts() {
   const filtered = state.filter === "all"
@@ -691,7 +767,7 @@ function openArchive(id) {
   if (!product) return;
   state.currentProduct = id;
 
-  document.querySelector("#modalFileNo").textContent = `FILE ${String(products.indexOf(product) + 1).padStart(3, "0")}`;
+  document.querySelector("#modalFileNo").textContent = `FILE ${product.archiveCode || String(products.indexOf(product) + 1).padStart(3, "0")}`;
 
   const modalVisual = document.querySelector("#modalVisual");
   const modalSymbol = document.querySelector("#modalSymbol");
@@ -722,14 +798,24 @@ function openArchive(id) {
   document.querySelector("#modalFeature").textContent = product.feature;
   
   document.querySelector("#archiveList").innerHTML = [
+    ["档案编号", product.archiveCode],
     ["名称", product.name],
+    ["英文名称", product.englishName],
     ["别称", product.alias],
-    ["所属类别", product.category],
-    ["核心产区", product.origin],
-    ["生长环境", product.environment],
+    ["所属大类", product.category],
+    ["分类英文", product.categoryEn],
+    ["所属类别", product.type || product.category],
+    ["产地", product.origin],
+    ["核心产区", product.coreArea || product.origin],
+    ["生长 / 形成环境", product.environment],
     ["形态特征", product.form],
-    ["地域价值", product.value]
-  ].map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join("");
+    ["代表价值", product.value],
+    ["档案附记", product.note],
+    ["关键词", product.keywords ? product.keywords.join(" · ") : ""]
+  ]
+    .filter(([, value]) => value)
+    .map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`)
+    .join("");
 
   updateModalButton();
   archiveModal.classList.add("open");
@@ -799,10 +885,10 @@ const routeThemes = {
     description: "黄渤海岸的冷水海味"
   },
   mountain: {
-    ids: ["ginseng", "tieling-hazelnut"],
+    ids: ["ginseng", "black-fungus", "tieling-hazelnut"],
     short: "山野",
     singleName: "辽东山野物产路线",
-    description: "辽东山地的林下山珍"
+    description: "辽东山地的林下山珍与菌类风物"
   },
   fruit: {
     ids: ["strawberry", "nanguo-pear", "beizhen-grape", "jinzhou-apple", "liaoyang-grape"],
@@ -811,10 +897,10 @@ const routeThemes = {
     description: "辽南与辽东果园的鲜甜风物"
   },
   mineral: {
-    ids: ["jade", "fuxin-agate"],
+    ids: ["jade", "fuxin-agate", "fushun-amber"],
     short: "矿脉",
     singleName: "矿脉工艺探索路线",
-    description: "古老矿脉的玉石与工艺"
+    description: "古老矿脉与地层记忆中的工艺物产"
   }
 };
 
@@ -832,6 +918,8 @@ const posterRegionLabels = {
   jellyfish: "营口近海",
   "jinzhou-apple": "辽西果园",
   "fuxin-agate": "阜新矿层",
+  "fushun-amber": "抚顺煤田地层",
+  "black-fungus": "清原山林",
   "tieling-hazelnut": "辽北山地",
   "liaoyang-grape": "辽阳山地"
 };
@@ -1573,6 +1661,7 @@ window.addEventListener("scroll", () => {
   document.querySelector(".site-header").classList.toggle("scrolled", window.scrollY > 30);
 }, { passive: true });
 
+renderArchiveTotals();
 renderProducts();
 renderRoute();
 renderTimeline("rice");

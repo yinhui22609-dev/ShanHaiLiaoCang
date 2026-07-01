@@ -66,7 +66,7 @@
 
         <div class="hero-index reveal">
           <span>ARCHIVE SYSTEM</span>
-          <strong>15</strong>
+          <strong id="archiveTotal">17</strong>
           <small>已收录物产档案</small>
         </div>
       </div>
@@ -104,9 +104,12 @@
             <button class="filter-chip" type="button" data-filter="稻香">稻香</button>
             <button class="filter-chip" type="button" data-filter="河鲜">河鲜</button>
             <button class="filter-chip" type="button" data-filter="山珍">山珍</button>
+            <button class="filter-chip" type="button" data-filter="山林物产">山林物产</button>
+            <button class="filter-chip" type="button" data-filter="食用菌">食用菌</button>
             <button class="filter-chip" type="button" data-filter="玉石">玉石</button>
             <button class="filter-chip" type="button" data-filter="果香">果香</button>
             <button class="filter-chip" type="button" data-filter="工艺物产">工艺物产</button>
+            <button class="filter-chip" type="button" data-filter="矿产工艺">矿产工艺</button>
           </div>
         </div>
         <div class="clue-row">
@@ -116,7 +119,9 @@
             <button class="filter-chip" type="button" data-filter="稻田共生">稻田共生</button>
             <button class="filter-chip" type="button" data-filter="江海交汇">江海交汇</button>
             <button class="filter-chip" type="button" data-filter="林下生长">林下生长</button>
+            <button class="filter-chip" type="button" data-filter="林下生态">林下生态</button>
             <button class="filter-chip" type="button" data-filter="地层沉积">地层沉积</button>
+            <button class="filter-chip" type="button" data-filter="地层记忆">地层记忆</button>
             <button class="filter-chip" type="button" data-filter="果园栽培">果园栽培</button>
             <button class="filter-chip" type="button" data-filter="山地孕育">山地孕育</button>
             <button class="filter-chip" type="button" data-filter="海洋牧场">海洋牧场</button>
@@ -128,6 +133,7 @@
             <button class="filter-chip" type="button" data-filter="鞍山">鞍山</button>
             <button class="filter-chip" type="button" data-filter="锦州">锦州</button>
             <button class="filter-chip" type="button" data-filter="营口">营口</button>
+            <button class="filter-chip" type="button" data-filter="抚顺">抚顺</button>
             <button class="filter-chip" type="button" data-filter="阜新">阜新</button>
             <button class="filter-chip" type="button" data-filter="铁岭">铁岭</button>
             <button class="filter-chip" type="button" data-filter="辽阳">辽阳</button>
@@ -188,7 +194,7 @@
 
       <div class="atlas-explorer reveal">
         <div class="atlas-index-line">
-          <span>LN-PRODUCT-ATLAS / 09 ORIGIN POINTS</span>
+          <span>LN-PRODUCT-ATLAS / 10 ORIGIN POINTS</span>
           <small id="atlasRelationStatus">全域总览 · 关系线待开启</small>
         </div>
 
@@ -208,8 +214,8 @@
           <div class="atlas-zone-summary" aria-live="polite">
             <p id="atlasZoneEn">LIAONING PRODUCT NETWORK</p>
             <h3 id="atlasZoneTitle">辽宁全域物产网络</h3>
-            <span id="atlasZoneDesc">从海岸、湿地到山地与矿层，九个产区节点共同构成辽宁物产的地域关系。</span>
-            <small id="atlasZoneProducts">山海 · 湿地 · 山林 · 矿脉 · 果园</small>
+            <span id="atlasZoneDesc">从海岸、湿地到山地与矿层，十个产区节点共同构成辽宁物产的地域关系。</span>
+            <small id="atlasZoneProducts">山海 · 湿地 · 山林 · 矿脉 · 果园 · 菌香</small>
           </div>
 
           <div class="atlas-control-group relation-control-group">
@@ -266,6 +272,9 @@
           </button>
           <button class="map-node" type="button" data-region="fuxin" data-zones="mineral" data-products="矿脉地层｜阜新玛瑙" style="--x:43%; --y:29%;">
             <i></i><span>阜新</span>
+          </button>
+          <button class="map-node" type="button" data-region="fushun" data-zones="mountain mineral" data-products="辽东山地 / 矿脉地层｜抚顺琥珀 · 黑木耳" style="--x:67%; --y:36%;">
+            <i></i><span>抚顺 / 清原</span>
           </button>
           <button class="map-node" type="button" data-region="tieling" data-zones="mountain" data-products="辽东山地｜铁岭榛子" style="--x:70%; --y:24%;">
             <i></i><span>铁岭</span>
@@ -340,7 +349,7 @@
           <p class="panel-kicker">CHECK-IN NODES / 打卡节点</p>
           <div class="panel-title">
             <span>我的收藏物产</span>
-            <strong><b id="collectionCount">0</b> / 15</strong>
+            <strong><b id="collectionCount">0</b> / <b data-product-total>17</b></strong>
           </div>
           <div class="collection-list" id="collectionList">
             <div class="collection-empty">
